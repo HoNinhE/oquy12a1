@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Đơn Giản</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      header,
+      footer {
+        background: #ffcc00;
+        padding: 20px;
+        text-align: center;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+      }
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .product {
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .product img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .product h3 {
+        font-size: 18px;
+        margin: 10px 0;
+      }
+      .product p {
+        color: red;
+        font-weight: bold;
+      }
+      .product button {
+        background: #ff9900;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .about {
+        text-align: center;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://p16-sign-sg.tiktokcdn.com/aweme/1080x1080/tos-alisg-avt-0068/f88975c575a8f34e7473a030bedeb406.jpeg?lk3s=a5d48078&nonce=59677&refresh_token=ce383e6d8f481c19e4077dfca226eb16&x-expires=1739894400&x-signature=DOUmyidkWQbG1CEVwSMrydAnzJI%3D&from=2782167160&shp=a5d48078&shcp=81f88b70"
+        alt="Logo"
+        class="logo"
+      />
+      <h1>Shop Công Nghệ</h1>
+    </header>
+
+    <div class="container">
+      <div class="about">
+        <h2>Về Chúng Tôi</h2>
+        <p>
+          Shop Công Nghệ chuyên cung cấp các sản phẩm điện tử chất lượng cao với
+          giá cả hợp lý. Hãy khám phá ngay!
+        </p>
+      </div>
+
+      <div class="products">
+        <div class="product" data-name="Điện thoại A" data-price="5000000">
+          <img
+            src="https://www.tiktok.com/@oquy12a1/video/7291825627370474753?is_from_webapp=1&sender_device=pc&web_id=7470563396279322130"
+            alt="Điện thoại A"
+          />
+          <h3>Điện thoại A</h3>
+          <p>5.000.000 VND</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div class="product" data-name="Điện thoại B" data-price="7000000">
+          <img src="https://via.placeholder.com/250" alt="Điện thoại B" />
+          <h3>Điện thoại B</h3>
+          <p>7.000.000 VND</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+        <div class="product" data-name="Laptop C" data-price="15000000">
+          <img src="https://via.placeholder.com/250" alt="Laptop C" />
+          <h3>Laptop C</h3>
+          <p>15.000.000 VND</p>
+          <button onclick="addToCart(this)">Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Shop Công Nghệ. All rights reserved.</p>
+    </footer>
+
+    <script>
+      let cart = [];
+
+      function addToCart(button) {
+        let product = button.parentElement;
+        let name = product.getAttribute("data-name");
+        let price = parseInt(product.getAttribute("data-price"));
+        cart.push({ name, price });
+        alert(`${name} đã được thêm vào giỏ hàng!`);
+      }
+    </script>
+  </body>
+</html>
